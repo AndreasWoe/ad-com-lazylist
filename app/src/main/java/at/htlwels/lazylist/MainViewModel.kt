@@ -9,7 +9,8 @@ import androidx.lifecycle.ViewModel
 class MainViewModel : ViewModel() {
 
     var items = mutableStateListOf<String>()
-    var selectedPayment : String by mutableStateOf("Keine Auswahl")
+
+    var selectedPayment by mutableStateOf("Keine Auswahl")
         private set
 
     init {

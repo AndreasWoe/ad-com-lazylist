@@ -15,6 +15,10 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
@@ -51,6 +55,9 @@ fun LazyListScreen(modifier: Modifier = Modifier, vm: MainViewModel = viewModel(
 //lazy list for large data sets
 @Composable
 fun LazyList(modifier: Modifier = Modifier, items: List<String>) {
+
+    var sliderPosition by remember { mutableStateOf(20f) }
+
     LazyColumn (modifier = Modifier) {
         items(items = items) {
             Text(text = it)
